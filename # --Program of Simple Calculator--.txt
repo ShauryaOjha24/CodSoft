@@ -1,0 +1,33 @@
+ # --Program of Simple Calculator--
+def calculate():
+    print("----Welcome to Simple Calculator----")
+    # Taking inputs from user for two numbers--
+    print()
+    num1=int(input("Enter the first number= "))
+    num2=int(input("Enter the second number= "))
+    # Displaying the inputed numbers on output screen--
+    print()
+    print(f"Inputed numbers are {num1} and {num2}.")
+    # Asking user for operation wanted to perform--
+    print()
+    choice=int(input("Enter the operation you want to perform:\n1- Addition\n2- Substraction\n3- Multiplication\n4- Division\n5- Modulus\n"))
+    # Showing given operation on output screen--
+    print()
+    print(f"You choose {choice} operation..")
+    print()
+    # Implimenting if-else statement to performing operaton and give the output--
+    if choice == 1 :
+        print(f"Addition of {num1} and {num2} is= ",+num1+num2) #for addtion
+    elif choice==2:
+        print(f"Substraction of {num1} and {num2} is= ",+num1-num2) #for substraction
+    elif choice==3:
+        print(f"Multiplication of {num1} and {num2} is= ",+num1*num2) #for multiplication
+    elif choice==4:
+        print(f"Division of {num1} and {num2} is= ",+num1/num2) #for division 
+    elif choice ==5:
+        print(f"Modulus of {num1} and {num2} is= ",+num1%num2) #for modulus
+    else:
+        print("Please enter a valid choice--")
+    # ---Program END---
+calculate()
+
