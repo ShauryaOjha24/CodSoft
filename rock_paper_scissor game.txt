@@ -1,0 +1,35 @@
+def game():
+    import random
+    
+    print("----Welcome to Rock, Paper and Scissor Game----")
+
+    comp_choice=random.choice([1,-1,0])
+    
+    choice=input("Enter your choice: \nRock\nPaper\nScissor\n")
+    choiceDict={"Rock":1,"Paper":-1,"Scissor":0}
+    reverseDict={1:"Rock",-1:"Paper",0:"Scissor"}
+    
+    choicenum=choiceDict[choice]
+    compnum=reverseDict[comp_choice]
+    
+    print(f"You choose={choice}\nComputer choose={compnum}")
+
+    if (choicenum==comp_choice):
+        print("-Match draw-")
+    else:
+        if (choicenum==1 and comp_choice==-1):
+            print("You lose the match.")
+        elif (choicenum==1 and comp_choice==0):
+            print("You win the Match.")
+        elif (choicenum==-1 and comp_choice==1):
+            print("You win the Match.")
+        elif (choicenum==-1 and comp_choice==0):
+            print("You lost the Match.")
+        elif (choicenum==0 and comp_choice==1):
+            print("You lost the Match.")
+        elif (choicenum==0 and comp_choice==-1):
+            print("You win the Match.")
+        else:
+            print("Please Enter a valid choice--")
+game()
+    
