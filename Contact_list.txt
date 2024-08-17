@@ -1,0 +1,97 @@
+def contact():
+    # creating empty list
+    name=[]
+    phone_number=[]
+    email=[]
+    address=[]
+
+    contact=int(input("How many contact you want to store in a contact list?  "))
+    # taking inputs
+    for i in range(1, contact+1):
+        print()
+        cname=input("Enter the name: ")
+        cphone=int(input("Enter the phone number: "))
+        cemail=input("Enter your email address: ")
+        caddress=input("Enter your Home address: ")
+        
+        name.append(cname)
+        phone_number.append(cphone)
+        email.append(cemail)
+        address.append(caddress)
+    while True:
+        print()
+        # giving user choice to perform different operations 
+        oper=int(input("Perform operations on the contact list:-\n1-Add new contact.\n2-Update the existing contact.\n3-view the contact list.\n4-Delete the existing contact.\n5-search the exixsting contact from the contact list.\n6-Close the Contact List.\n"))
+        print()
+        if oper==1: #if user input 1
+            
+            new_name=input("Enter the name: ")
+            new_number=int(input("Enter the phone number: "))
+            new_email=input("Enter the email address: ")
+            new_address=input("Enter the home address: ")
+
+            name.append(new_name)
+            phone_number.append(new_number)
+            email.append(new_email)
+            address.append(new_address)
+            print()
+            print(f"{new_name} has been added in the contact list..")
+
+        elif oper==2: #if user input 2
+            old_name=input("Enter the contact name you want to update: ")
+        
+            if old_name in name:
+                indN=name.index(old_name)
+                name[indN]=input("Enter new name: ")
+                phone_number[indN]=int(input("Enter phone number= "))
+                email[indN]=input("Enter the email= ")
+                address[indN]=input("Enter the address= ")
+
+                print(f"{old_name} has been updated by {name[indN]}")
+
+            else:
+                print()
+                print(f"{old_name} not found in the contact list--")
+
+        elif oper==3: #if user input 3
+            print(f"The Contact list--\n{name}\n{phone_number}\n{email}\n{address}")
+
+        elif oper==4: #if user input 4
+            del_name=input("Enter the contact name you want to delete= ")
+            if del_name in name:
+                
+                index=name.index(del_name)
+                
+                del name[index]
+                del phone_number[index]
+                del email[index]
+                del address[index]
+                print()
+                print(f"{del_name} has been deleted from the contact list..")
+                
+            else: 
+                print("Contact not found--")
+
+                
+        elif oper==5: #if user input 5
+            search=input("Search the name= ")
+            if search in name:
+                indexS=name.index(search)
+                print()
+                print(f"Name:-{name[indexS]}\nPhone Number:-{phone_number[indexS]}\nEmail:-{email[indexS]}\nHome Address:-{address[indexS]}")
+
+            else:
+                print(f"{search} not found in the contact list--")
+        
+        elif oper==6:
+            print("---Contact list is closing---")
+            break
+
+        else: # if user input wrong choice
+            print("Enter a valid input--")
+                
+
+
+contact()
+            
+
